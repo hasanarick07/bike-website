@@ -52,7 +52,7 @@ const Inventory = () => {
     })
       .then(res => res.json())
       .then(data => {
-        console.log("paisi new", data);
+        // console.log("paisi new", data);
         toast.success("User updated successfully");
         e.target.reset();
       });

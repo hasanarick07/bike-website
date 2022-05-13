@@ -5,6 +5,8 @@ import Bikes from "./Component/Bikes/Bikes";
 import ErrorPage from "./Component/ErrorPage/ErrorPage";
 import Home from "./Component/Home/Home";
 import Inventory from "./Component/Inventory/Inventory";
+import Login from "./Component/LogIn/Login";
+import Register from "./Component/Register/Register";
 import RequireAuth from "./Component/RequireAuth/RequireAuth";
 import Footer from "./Component/Shared/Footer/Footer";
 import Header from "./Component/Shared/Header/Header";
@@ -18,6 +20,8 @@ function App() {
         <Route path="/home" element={<Home></Home>}></Route>
         <Route path="/bikes" element={<Bikes></Bikes>}></Route>
         <Route path="/bikes/:id" element={<RequireAuth><Inventory></Inventory></RequireAuth>}></Route>
+        <Route path="/login" element={<Login></Login>}></Route>
+        <Route path="/register" element={<Register></Register>}></Route>
         <Route path="*" element={<ErrorPage />}></Route>
       </Routes>
       <Footer />

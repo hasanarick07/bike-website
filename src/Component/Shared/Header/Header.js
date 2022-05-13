@@ -76,7 +76,7 @@ const Header = () => {
           )}
 
           <div className="dropdown dropdown-end mr-3 indicator">
-            <label tabindex="0" className="btn btn-ghost btn-circle avatar">
+            <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full ">
                 {user?.photoURL ? (
                   <img src={user?.photoURL} alt="" />
@@ -90,7 +90,7 @@ const Header = () => {
               </div>
             </label>
             <ul
-              tabindex="0"
+              tabIndex="0"
               className="menu menu-compact text-left dropdown-content mt-16 p-2 shadow bg-base-100 rounded-box w-36"
             >
               <div className="hover:bg-gray-700 hover:rounded-md hover:text-gray-100 hover:p-1">
