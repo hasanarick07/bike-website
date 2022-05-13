@@ -4,10 +4,17 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
 import bike from "../../../images/bike.png";
+import Loading from "../../Loading/Loading";
 
 const Header = () => {
-  const [user] = useAuthState(auth);
+  const [user, loading, error] = useAuthState(auth);
   // console.log(user?.photoURL);
+  if (loading) {
+    <Loading />;
+  }
+  if (error) {
+    console.dir(error);
+  }
   const navigate = useNavigate();
   const handleHome = () => {
     navigate("/");
