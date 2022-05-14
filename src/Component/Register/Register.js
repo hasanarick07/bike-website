@@ -28,6 +28,7 @@ const Register = () => {
   }
   const registerFormSubmit = e => {
     e.preventDefault();
+    console.log(registerEmail.current.value)
     const emailVerify = /\S+@\S+\.\S+/;
     const verifiedEmail = emailVerify.test(registerEmail.current.value);
     if (!verifiedEmail) {

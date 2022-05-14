@@ -65,6 +65,13 @@ const Header = () => {
             </Link>
           )}
           {user ? (
+            <div className="hover:bg-gray-700 mr-3 hover:rounded-md hover:text-gray-100 hover:p-1">
+              {user?.email}
+            </div>
+          ) : (
+            ""
+          )}
+          {user ? (
             <div
               className="hover:bg-gray-700 hover:rounded-md hover:text-gray-100 hover:p-1"
               onClick={signOutButton}

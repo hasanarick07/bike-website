@@ -30,6 +30,7 @@ const Login = () => {
   }
   const loginFormSubmit = async e => {
     e.preventDefault();
+    console.log(logEmail.current.value);
     const emailVerify = /\S+@\S+\.\S+/;
     const verifiedEmail = emailVerify.test(logEmail.current.value);
     if (!verifiedEmail) {
@@ -47,17 +48,18 @@ const Login = () => {
     } else {
       setLoginPassword(logPassword.current.value);
     }
+
     await signInWithEmailAndPassword(loginEmail, loginPassword);
     const { data } = await axios.post("http://localhost:5000/login", {
       loginEmail,
     });
-    console.log(data);
+    console.log(data, loginEmail);
     localStorage.setItem("accessToken", data.accessToken);
     navigate(from, { replace: true });
   };
 
   if (error || resetError) {
-    toast.error(error?.message);
+    // toast.error(error?.message, "hi");
   }
   const emailReset = async () => {
     if (loginEmail) {
